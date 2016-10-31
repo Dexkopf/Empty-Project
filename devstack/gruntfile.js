@@ -9,13 +9,13 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // DEVELOPMENT TASKS
         watch: {
-            files: '../css/new/scss/*.scss',
+            files: '../assets/sass/*.scss',
             tasks: ['sass']
         },
         sass: {
             dev: {
                 files: {
-
+                    '../assets/css/main.css': '../assets/sass/main.scss',
                 }
             }
         },
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
             dev: {
                 bsFiles: {
                     src : [
-                        '../css/*.css',
+                        '..assets/css/*.css',
                         '../*.html'
                     ]
                 },
@@ -33,21 +33,6 @@ module.exports = function (grunt) {
                 },
             },
         },
-        //DEPLOYMENT TASKS
-        cssmin: {
-          target: {
-            files: [{
-              expand: true,
-              cwd: '../css',
-              src: ['*.css', '!*.min.css'],
-              dest: '../css',
-              ext: '.min.css'
-            }],
-          },
-        },
-
-
     });
     grunt.registerTask('default', ['browserSync', 'watch']);
-    grunt.registerTask('deploy', ['cssmin',]);
 };
