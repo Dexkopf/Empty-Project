@@ -1,0 +1,23 @@
+.side {
+	$side-color-link:#fff;
+
+	background:$color-text;
+	color:$side-color-link;
+	float:right;
+	padding:$spacing-vertical 2%;
+	width:24%;
+
+	.side__heading:first-child {
+		margin-top:0;
+	}
+
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+
+	a:link, a:visited {
+		color:$side-color-link;
+	}
+}
